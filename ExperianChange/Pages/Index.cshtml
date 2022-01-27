@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Change Calculator";
+}
+
+<div class="text-center">
+    <h1 class="display-4"> Calculate Change</h1>
+
+    <form  method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="@Model.change.ProductPrice" class="control-label"></label>
+            <input asp-for="@Model.change.ProductPrice" class="form-control" />
+            <span asp-validation-for="@Model.change.ProductPrice" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.change.AmountGiven" class="control-label"></label>
+            <input asp-for="@Model.change.AmountGiven" class="form-control" />
+            <span asp-validation-for="@Model.change.AmountGiven" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Calculate"  class="btn btn-default"/>
+        </div>
+        <h3 class="clearfix">@Model.change.ChangeGiven</h3>
+    </form>
+
+      
+
+
+</div>
